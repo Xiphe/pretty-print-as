@@ -1,0 +1,49 @@
+{
+  "name": "stringify-prop-value-as",
+  "version": "0.0.0-development",
+  "description": "customize how object is serialized in react-element-to-jsx-string",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "test": "node -r esbuild-register src/test.ts",
+    "build": "rm -rf dist && tsc && npm run build:esm && npm run build:cjs",
+    "build:esm": "esbuild src/index.ts --outfile=dist/index.mjs --format=esm --target=node18",
+    "build:cjs": "esbuild src/index.ts --outfile=dist/index.cjs --format=cjs --target=node14",
+    "prepare": "npm run test && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Xiphe/stringify-prop-value-as.git"
+  },
+  "keywords": [
+    "custom",
+    "serialization",
+    "pretty-print-object",
+    "storybook"
+  ],
+  "author": "Hannes Diercks <node@xiphe.net> (https://xiphe.net/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Xiphe/stringify-prop-value-as/issues"
+  },
+  "homepage": "https://github.com/Xiphe/stringify-prop-value-as#readme",
+  "devDependencies": {
+    "@base2/pretty-print-object": "1.0.2",
+    "@types/node": "18.7.1",
+    "@types/react": "18.0.17",
+    "esbuild": "0.15.1",
+    "esbuild-register": "3.3.3",
+    "react": "18.2.0",
+    "react-element-to-jsx-string": "15.0.0",
+    "types-node-test": "1.0.2",
+    "typescript": "4.7.4"
+  }
+}
