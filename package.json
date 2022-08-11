@@ -1,6 +1,6 @@
 {
   "name": "stringify-prop-value-as",
-  "version": "0.0.0-development",
+  "version": "0.1.0",
   "description": "customize how object is serialized in react-element-to-jsx-string",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
